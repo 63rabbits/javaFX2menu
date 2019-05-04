@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="javaFX2menu.MenuController">
+  <children>
+    <MenuBar fx:id="mnb" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <menus>
+        <Menu id="" mnemonicParsing="false" text="File" fx:id="menuFile">
+          <items>
+            <MenuItem id="" mnemonicParsing="false" onAction="#menuFileOpenOnAction" text="Open" fx:id="menuOpen">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+              </accelerator>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#menuFileQuitOnAction" text="Quit" fx:id="menuQuit">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+              </accelerator>
+            </MenuItem>
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Select" fx:id="menuSelect">
+          <items>
+            <Menu mnemonicParsing="false" text="Check" fx:id="menuSelectCheck">
+              <items>
+                <CheckMenuItem mnemonicParsing="false" onAction="#menuSelectCheck01OnAction" text="check-01" fx:id="menuSelectCheck01" />
+                <CheckMenuItem mnemonicParsing="false" onAction="#menuSelectCheck02OnAction" text="check-02" fx:id="menuSelectCheck02" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Radio" fx:id="menuSelectRadio">
+              <items>
+                <RadioMenuItem mnemonicParsing="false" onAction="#menuSelectRadioOnAction" text="radio-01" fx:id="menuSelectRadio01">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="rdogroop" />
+                  </toggleGroup>
+                </RadioMenuItem>
+                <RadioMenuItem mnemonicParsing="false" onAction="#menuSelectRadioOnAction" text="radio-02" toggleGroup="$rdogroop" fx:id="menuSelectRadio02" />
+              </items>
+            </Menu>
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <VBox prefHeight="-1.0" prefWidth="-1.0" spacing="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="40.0">
+      <children>
+        <StackPane prefHeight="150.0" prefWidth="200.0">
+          <children>
+            <Label text="Label">
+              <contextMenu>
+                <ContextMenu fx:id="imvCMenu">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#cMenuItemZoomInOnAction" text="zoom in" fx:id="cMenuItemZoomIn" />
+                    <MenuItem mnemonicParsing="false" onAction="#cMenuItemZoomOutOnAction" text="zoom out" fx:id="cMenuItemZoomOut" />
+                  </items>
+                </ContextMenu>
+              </contextMenu>
+            </Label>
+            <ImageView fx:id="imv" fitHeight="200.0" fitWidth="400.0" onMouseClicked="#imageViewOnMouseClicked" pickOnBounds="true" preserveRatio="true" />
+          </children>
+        </StackPane>
+        <VBox prefHeight="-1.0" prefWidth="-1.0">
+          <children>
+            <Label text="What happend ?" />
+            <TextField fx:id="txf" editable="false" focusTraversable="false" prefWidth="200.0" style="-fx-background-color: beige;" />
+          </children>
+        </VBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>
